@@ -1,1 +1,1 @@
-This repo will be based on a project from TheOdinProject. The goal of this project is to create a rock-paper-scissors game that is played in the console using javascript.
+This repo will be based on a project from TheOdinProject. The goal of this project is to create a rock-paper-scissors game that is played in the console using javascript. The live demo will be added later when I am finished with the javascript portion of the course.
