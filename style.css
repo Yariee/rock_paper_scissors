@@ -1,0 +1,26 @@
+body {
+    margin: 0;
+    background-color: #222831;
+}
+.header {
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+    background-color: grey;
+    font-family: 'Monaco', 'Times New Roman';
+}
+
+.main {
+    text-align: center;
+}
+
+.gameScore {
+    margin-top: 10%;
+    color: white;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 5%;
+}
