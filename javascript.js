@@ -42,18 +42,20 @@ function playRound(humanChoice, computerChoice) {
         }
     }
 }
-function uiScoreBoard() {
+function playGame() {
     // Rock button
     const rockButton = document.querySelector("#rockButton");
     rockButton.addEventListener("click", () => {
         playRound("rock", getComputerChoice());
     });
 
+    // Paper button
     const paperButton = document.querySelector("#paperButton");
     paperButton.addEventListener("click", () => {
         playRound("paper", getComputerChoice());
     });
 
+    // Scissors button
     const scissorsButton = document.querySelector("#scissorsButton");
     scissorsButton.addEventListener("click", () => {
         playRound("scissors", getComputerChoice());
@@ -86,10 +88,6 @@ function uiScoreBoard() {
 // gameScore.classList.add("content");
 // gameScore.textContent = "Testing TEXT";
 // main.appendChild(gameScore);
-
-function playGame() {
-    uiScoreBoard();
-}
 
 let humanScore = 0;
 let computerScore = 0;
