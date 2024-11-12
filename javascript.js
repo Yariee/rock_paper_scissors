@@ -58,6 +58,7 @@ function playRound(humanChoice, computerChoice) {
 }
 function playGame() {
     // Rock button
+
     const rockButton = document.querySelector("#rockButton");
     rockButton.addEventListener("click", () => {
         playRound("rock", getComputerChoice());
@@ -75,16 +76,6 @@ function playGame() {
         playRound("scissors", getComputerChoice());
     });
 }
-
-// function getHumanChoice() {
-//     let userChoice = prompt("Would you like to be rock, paper or scissors?").toLowerCase();
-//     if (userChoice == "rock" || userChoice == "paper" || userChoice == "scissors") {
-//         return userChoice;
-//     } else {
-//         alert("You did not choose a correct option. Please try again!")
-//     }
-// }
-
 
 // function playGame() {
 //     for (let i = 0; i < 5; i++) {
