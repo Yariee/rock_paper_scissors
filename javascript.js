@@ -1,3 +1,6 @@
+let humanScore = 0;
+let computerScore = 0;
+
 function getComputerChoice() {
     let computerChoice = Math.floor(Math.random() * 3);
     if (computerChoice == 0) {
@@ -10,35 +13,46 @@ function getComputerChoice() {
 }
 
 function playRound(humanChoice, computerChoice) {
+    const roundScore = document.querySelector("#round-score-container");
+    const matchScore = document.querySelector("#match-score-container");
     if (humanChoice == "rock") { 
         if (computerChoice == "rock") {
-            console.log("Its a tie! You both chose rock!");
+            roundScore.innerHTML = "Its a tie! You both chose rock!";
+            matchScore.innerHTML = `User Score: ${humanScore} - Computer Score: ${computerScore}`;
         } else if (computerChoice == "paper") {
             computerScore += 1;
-            console.log("You lose. Computer chose paper!");
+            roundScore.innerHTML = "You lose. Computer chose paper!";
+            matchScore.innerHTML = `User Score: ${humanScore} - Computer Score: ${computerScore}`;
         } else {
             humanScore += 1;
-            console.log("You win!");
+            roundScore.innerHTML = "You win!";
+            matchScore.innerHTML = `User Score: ${humanScore} - Computer Score: ${computerScore}`;
         }
     } else if (humanChoice == "paper") {
         if (computerChoice == "rock") {
             humanScore += 1;
-            console.log("You win!");
+            roundScore.innerHTML = "You win!";
+            matchScore.innerHTML = `User Score: ${humanScore} - Computer Score: ${computerScore}`;
         } else if (computerChoice == "paper") {
-            console.log("Its a tie! You both chose paper!");
+            roundScore.innerHTML = "Its a tie! You both chose paper!";
+            matchScore.innerHTML = `User Score: ${humanScore} - Computer Score: ${computerScore}`;
         } else {
             computerScore += 1;
-            console.log("You lose. Computer chose scissors!");
+            roundScore.innerHTML = "You lose. Computer chose scissors!";
+            matchScore.innerHTML = `User Score: ${humanScore} - Computer Score: ${computerScore}`;
         }
     } else {    // human chooses scissors
         if (computerChoice == "rock") { 
             computerScore += 1;
-            console.log("You lose. Computer chose rock!");
+            roundScore.innerHTML = "You lose. Computer chose rock!";
+            matchScore.innerHTML = `User Score: ${humanScore} - Computer Score: ${computerScore}`;
         } else if (computerChoice == "paper") {
             humanScore += 1;
-            console.log("You win!");
+            roundScore.innerHTML = "You win!";
+            matchScore.innerHTML = `User Score: ${humanScore} - Computer Score: ${computerScore}`;
         } else {
-            console.log("Its a tie! You both choose scissors!");
+            roundScore.innerHTML = "Its a tie! You both chose scissors!";
+            matchScore.innerHTML = `User Score: ${humanScore} - Computer Score: ${computerScore}`;
         }
     }
 }
@@ -89,6 +103,4 @@ function playGame() {
 // gameScore.textContent = "Testing TEXT";
 // main.appendChild(gameScore);
 
-let humanScore = 0;
-let computerScore = 0;
 console.log(playGame());
