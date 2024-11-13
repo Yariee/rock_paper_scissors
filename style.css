@@ -43,3 +43,13 @@ button {
     font-size: 25px;
     color: white;
 }
+
+.winner {
+    display: none;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 25px;
+}
