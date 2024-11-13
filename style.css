@@ -53,3 +53,13 @@ button {
     color: white;
     font-size: 25px;
 }
+
+.initial-instructions {
+    text-align: center;
+    color: white;
+    font-size: 25px;
+}
+
+.hidden {
+    display: none;
+}
