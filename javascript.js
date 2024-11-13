@@ -12,6 +12,11 @@ function getComputerChoice() {
     }
 }
 
+function hideInstructions() {
+    const instructions = document.querySelector(".initial-instructions");
+    instructions.classList.add("hidden");
+}
+
 function trackScore(humanScore, computerScore) {
     const winner = document.querySelector(".winner");
     const winningPlayer = document.querySelector(".winner h1");
@@ -74,21 +79,26 @@ function playRound(humanChoice, computerChoice) {
     trackScore(humanScore, computerScore);
 }
 function playGame() {
-    // Rock button
     const rockButton = document.querySelector("#rockButton");
+    const paperButton = document.querySelector("#paperButton");
+    const scissorsButton = document.querySelector("#scissorsButton");
+
+
+    // Rock button
     rockButton.addEventListener("click", () => {
+        hideInstructions();
         playRound("rock", getComputerChoice());
     });
 
     // Paper button
-    const paperButton = document.querySelector("#paperButton");
     paperButton.addEventListener("click", () => {
+        hideInstructions();
         playRound("paper", getComputerChoice());
     });
 
     // Scissors button
-    const scissorsButton = document.querySelector("#scissorsButton");
     scissorsButton.addEventListener("click", () => {
+        hideInstructions();
         playRound("scissors", getComputerChoice());
     });
 }
