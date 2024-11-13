@@ -12,53 +12,69 @@ function getComputerChoice() {
     }
 }
 
+function trackScore(humanScore, computerScore) {
+    const winner = document.querySelector(".winner");
+    const winningPlayer = document.querySelector(".winner h1");
+    if (humanScore == 5 || computerScore == 5) {
+        winner.style.display = "flex";
+        if (humanScore == 5) {
+            winningPlayer.innerHTML = "You won!";
+        } else {
+            winningPlayer.innerHTML = "You lost...";
+        }
+    }
+
+    window.addEventListener("keydown", function restart(event) {
+        if (event.key == "r") {
+            location.reload();
+            window.removeEventListener("keydown", restart);
+        }
+    })
+}
+
 function playRound(humanChoice, computerChoice) {
+    if (humanScore >= 5 || computerScore >= 5) {
+        return;
+    }
+
     const roundScore = document.querySelector("#round-score-container");
     const matchScore = document.querySelector("#match-score-container");
     if (humanChoice == "rock") { 
         if (computerChoice == "rock") {
             roundScore.innerHTML = "Its a tie! You both chose rock!";
-            matchScore.innerHTML = `User Score: ${humanScore} - Computer Score: ${computerScore}`;
         } else if (computerChoice == "paper") {
             computerScore += 1;
             roundScore.innerHTML = "You lose. Computer chose paper!";
-            matchScore.innerHTML = `User Score: ${humanScore} - Computer Score: ${computerScore}`;
         } else {
             humanScore += 1;
             roundScore.innerHTML = "You win!";
-            matchScore.innerHTML = `User Score: ${humanScore} - Computer Score: ${computerScore}`;
         }
     } else if (humanChoice == "paper") {
         if (computerChoice == "rock") {
             humanScore += 1;
             roundScore.innerHTML = "You win!";
-            matchScore.innerHTML = `User Score: ${humanScore} - Computer Score: ${computerScore}`;
         } else if (computerChoice == "paper") {
             roundScore.innerHTML = "Its a tie! You both chose paper!";
-            matchScore.innerHTML = `User Score: ${humanScore} - Computer Score: ${computerScore}`;
         } else {
             computerScore += 1;
             roundScore.innerHTML = "You lose. Computer chose scissors!";
-            matchScore.innerHTML = `User Score: ${humanScore} - Computer Score: ${computerScore}`;
         }
     } else {    // human chooses scissors
         if (computerChoice == "rock") { 
             computerScore += 1;
             roundScore.innerHTML = "You lose. Computer chose rock!";
-            matchScore.innerHTML = `User Score: ${humanScore} - Computer Score: ${computerScore}`;
         } else if (computerChoice == "paper") {
             humanScore += 1;
             roundScore.innerHTML = "You win!";
-            matchScore.innerHTML = `User Score: ${humanScore} - Computer Score: ${computerScore}`;
         } else {
             roundScore.innerHTML = "Its a tie! You both chose scissors!";
-            matchScore.innerHTML = `User Score: ${humanScore} - Computer Score: ${computerScore}`;
         }
     }
+    matchScore.innerHTML = `User Score: ${humanScore} - Computer Score: ${computerScore}`;
+    trackScore(humanScore, computerScore);
 }
 function playGame() {
     // Rock button
-
     const rockButton = document.querySelector("#rockButton");
     rockButton.addEventListener("click", () => {
         playRound("rock", getComputerChoice());
