@@ -93,21 +93,4 @@ function playGame() {
     });
 }
 
-// function playGame() {
-//     for (let i = 0; i < 5; i++) {
-//         const humanSelection = getHumanChoice();
-//         const computerSelection = getComputerChoice();
-//         playRound(humanSelection, computerSelection);
-//     }
-//     console.log("Your score: " + humanScore);
-//     console.log("Computer score: " + computerScore);
-// }
-
-// const main = document.querySelector("#main");
-// const gameScore = document.createElement("div");
-
-// gameScore.classList.add("content");
-// gameScore.textContent = "Testing TEXT";
-// main.appendChild(gameScore);
-
 console.log(playGame());
